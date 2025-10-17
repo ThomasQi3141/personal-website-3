@@ -10,11 +10,12 @@ export default function Home() {
       <main className="max-w-3xl w-full mx-auto">
         <div className="mb-10">
           <h1 className="text-[10vw] leading-[1.05] min-[420px]:text-5xl sm:text-6xl font-bold tracking-tight mb-6">
-            Hi, I'm Thomas
+            Hi, I&apos;m Thomas
           </h1>
           <p className="text-lg min-[420px]:text-xl sm:text-2xl leading-relaxed text-foreground/90">
-            I'm a 3rd year Computer Science student at the University of
-            Waterloo. I'm currently working as a software engineering intern at{" "}
+            I&apos;m a 3rd year Computer Science student at the University of
+            Waterloo. I&apos;m currently working as a software engineering
+            intern at{" "}
             <a
               href="https://www.bitgo.com/"
               target="_blank"
@@ -26,7 +27,7 @@ export default function Home() {
             platform for digital assets.
           </p>
           <p className="mt-4 text-lg min-[420px]:text-xl sm:text-2xl leading-relaxed text-foreground/90">
-            I'm also currently researching the applications of LLM tooling
+            I&apos;m also currently researching the applications of LLM tooling
             (using call-graphs to enhance AI coding agents) under {""}
             <a
               href="https://cs.uwaterloo.ca/~m2nagapp/"
