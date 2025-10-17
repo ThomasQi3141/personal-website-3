@@ -1,0 +1,76 @@
+@import "tailwindcss";
+
+:root {
+  --background: rgb(245, 245, 247);
+  --foreground: #171717;
+  --border: rgba(0, 0, 0, 0.08);
+  --hover-bg: #f2f2f2;
+  --accent: #2563eb; /* blue-600 */
+  --accent-hover: #1d4ed8; /* blue-700 */
+}
+
+/* Respect user preference by default */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+    --border: rgba(255, 255, 255, 0.145);
+    --hover-bg: #1a1a1a;
+    --accent: #60a5fa; /* blue-400 */
+    --accent-hover: #3b82f6; /* blue-500 */
+  }
+}
+
+/* Explicit theme override via data attribute set by the toggle */
+html[data-theme="light"] {
+  --background: rgb(245, 245, 247);
+  --foreground: #171717;
+  --border: rgba(0, 0, 0, 0.08);
+  --hover-bg: #f2f2f2;
+  --accent: #2563eb;
+  --accent-hover: #1d4ed8;
+}
+html[data-theme="dark"] {
+  --background: #0a0a0a;
+  --foreground: #ededed;
+  --border: rgba(255, 255, 255, 0.145);
+  --hover-bg: #1a1a1a;
+  --accent: #60a5fa;
+  --accent-hover: #3b82f6;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+}
+
+/* Utility classes for theme-aware styling without relying on dark: variant */
+.themed-border {
+  border-color: var(--border);
+}
+.themed-hover:hover {
+  background: var(--hover-bg);
+}
+
+/* Accent link style across themes */
+.accent-link {
+  color: var(--accent);
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+.accent-link:hover {
+  color: var(--accent-hover);
+  cursor: pointer;
+}
+.accent-link:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
