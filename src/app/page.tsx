@@ -120,7 +120,31 @@ export default function Home() {
         </section>
       </main>
 
-      {/* Footer */}
+      {/* Footer - CS Webring (left) */}
+      <div className="fixed bottom-4 left-4 flex items-center gap-2 text-sm text-foreground/50">
+        <a
+          href="https://cs.uwatering.com/#thomasqi.com?nav=prev"
+          className="hover:text-foreground transition-colors">
+          ←
+        </a>
+        <a
+          href="https://cs.uwatering.com/#thomasqi.com"
+          target="_blank"
+          rel="noopener noreferrer">
+          <img
+            src="https://cs.uwatering.com/icon.black.svg"
+            alt="CS Webring"
+            className="w-5 h-auto opacity-50 hover:opacity-80 transition-opacity themed-invert"
+          />
+        </a>
+        <a
+          href="https://cs.uwatering.com/#thomasqi.com?nav=next"
+          className="hover:text-foreground transition-colors">
+          →
+        </a>
+      </div>
+
+      {/* Footer - Updated date (right) */}
       <div className="fixed bottom-4 right-4 text-sm text-foreground/50">
         Updated 2026/01/31
       </div>
