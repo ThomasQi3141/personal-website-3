@@ -9,26 +9,47 @@ export default function Home() {
       </div>
       <main className="max-w-3xl w-full mx-auto">
         <div className="mb-10">
-          <h1 className="text-[10vw] leading-[1.05] min-[420px]:text-5xl sm:text-6xl font-bold tracking-tight mb-6">
-            Hi, I&apos;m Thomas
+          <h1 className="text-[9vw] leading-[1.05] min-[420px]:text-4xl sm:text-5xl font-medium tracking-tight mb-2 font-[family-name:var(--font-playfair-display)]">
+            Thomas Qi
           </h1>
-          <p className="text-lg min-[420px]:text-xl sm:text-2xl leading-relaxed text-foreground/90">
-            I&apos;m a 3rd year Computer Science student at the University of
-            Waterloo. I&apos;m currently working as a software engineering
-            intern at{" "}
+          <p className="text-sm min-[420px]:text-base text-foreground/60 mb-6">
+            Computer Science @ UWaterloo
+          </p>
+
+          <hr className="border-t themed-border mb-6" />
+
+          <p className="text-base min-[420px]:text-lg sm:text-xl leading-relaxed text-foreground/90">
+            Hi, I&apos;m Thomas! I&apos;m in 3A CS.
+          </p>
+
+          <p className="mt-4 text-base min-[420px]:text-lg sm:text-xl leading-relaxed text-foreground/90">
+            Currently, I&apos;m on an exchange semester at Nanyang Technological
+            University (NTU) in Singapore.
+          </p>
+
+          <p className="mt-4 text-base min-[420px]:text-lg sm:text-xl leading-relaxed text-foreground/90">
+            Previously, I&apos;ve worked on crypto trading platforms at{" "}
             <a
               href="https://www.bitgo.com/"
               target="_blank"
               rel="noopener noreferrer"
               className="accent-link">
               BitGo
+            </a>
+            . This summer, I&apos;ll be joining{" "}
+            <a
+              href="https://www.coinbase.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="accent-link">
+              Coinbase
             </a>{" "}
-            on the Prime Trade team, building a robust, low-latency trading
-            platform for digital assets.
+            on the institutional product group in San Francisco.
           </p>
-          <p className="mt-4 text-lg min-[420px]:text-xl sm:text-2xl leading-relaxed text-foreground/90">
-            I&apos;m also currently researching the applications of LLM tooling
-            (using call-graphs to enhance AI coding agents) under {""}
+
+          <p className="mt-4 text-base min-[420px]:text-lg sm:text-xl leading-relaxed text-foreground/90">
+            I&apos;ve also previously done research on the applications of LLM
+            tooling under{" "}
             <a
               href="https://cs.uwaterloo.ca/~m2nagapp/"
               target="_blank"
@@ -37,6 +58,25 @@ export default function Home() {
               Dr. Mei Nagappan
             </a>
             .
+          </p>
+
+          <p className="mt-4 text-base min-[420px]:text-lg sm:text-xl leading-relaxed text-foreground/90">
+            Here&apos;s my{" "}
+            <a
+              href="/resume/Resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="accent-link">
+              resume
+            </a>{" "}
+            if you&apos;re interested.
+          </p>
+
+          <p className="mt-6 text-base min-[420px]:text-lg sm:text-xl leading-relaxed text-foreground/90">
+            Here&apos;s a photo album of my cat{" "}
+            <a href="/cat" className="accent-link">
+              ₍^. .^₎⟆
+            </a>
           </p>
         </div>
 
@@ -76,26 +116,14 @@ export default function Home() {
               </svg>
               <span className="font-medium">LinkedIn</span>
             </a>
-
-            {/* <a
-              href="/resume.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="rounded-full border themed-border px-4 h-10 inline-flex items-center gap-2 themed-hover">
-
-              <svg
-                width="18"
-                height="18"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-                aria-hidden>
-                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6Zm1 7h5l-5-5v5Z" />
-              </svg>
-              <span className="font-medium">Resume</span>
-            </a> */}
           </div>
         </section>
       </main>
+
+      {/* Footer */}
+      <div className="fixed bottom-4 right-4 text-sm text-foreground/50">
+        Updated 2026/01/31
+      </div>
     </div>
   );
 }
