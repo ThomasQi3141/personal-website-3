@@ -14,12 +14,12 @@ const catPhotos = [
 export default function CatAlbum() {
   return (
     <div className="min-h-screen px-5 sm:px-10 py-6">
-      {/* Fixed top-left theme toggle */}
-      <div className="fixed top-4 left-4 z-10">
+      {/* Theme toggle - inline on mobile, fixed on desktop */}
+      <div className="mb-6 sm:mb-0 sm:fixed sm:top-4 sm:left-4 sm:z-10">
         <ThemeToggle />
       </div>
 
-      <main className="max-w-4xl w-full mx-auto pt-12">
+      <main className="max-w-4xl w-full mx-auto sm:pt-12">
         {/* Back link */}
         <Link
           href="/"

@@ -2,12 +2,12 @@ import ThemeToggle from "@/components/ThemeToggle";
 
 export default function Home() {
   return (
-    <div className="min-h-screen px-5 sm:px-10 py-6 flex items-center justify-center">
-      {/* Fixed top-left theme toggle */}
-      <div className="fixed top-4 left-4">
+    <div className="min-h-screen px-5 sm:px-10 py-6 flex flex-col sm:items-center sm:justify-center">
+      {/* Theme toggle - inline on mobile, fixed on desktop */}
+      <div className="mb-6 sm:mb-0 sm:fixed sm:top-4 sm:left-4">
         <ThemeToggle />
       </div>
-      <main className="max-w-3xl w-full mx-auto">
+      <main className="max-w-3xl w-full mx-auto flex-1 sm:flex-none">
         <div className="mb-10">
           <h1 className="text-[9vw] leading-[1.05] min-[420px]:text-4xl sm:text-5xl font-medium tracking-tight mb-2 font-[family-name:var(--font-playfair-display)]">
             Thomas Qi
@@ -120,34 +120,37 @@ export default function Home() {
         </section>
       </main>
 
-      {/* Footer - CS Webring (left) */}
-      <div className="fixed bottom-4 left-4 flex items-center gap-2 text-sm text-foreground/50">
-        <a
-          href="https://cs.uwatering.com/#thomasqi.com?nav=prev"
-          className="hover:text-foreground transition-colors">
-          ←
-        </a>
-        <a
-          href="https://cs.uwatering.com/#thomasqi.com"
-          target="_blank"
-          rel="noopener noreferrer">
-          <img
-            src="https://cs.uwatering.com/icon.black.svg"
-            alt="CS Webring"
-            className="w-5 h-auto opacity-50 hover:opacity-80 transition-opacity themed-invert"
-          />
-        </a>
-        <a
-          href="https://cs.uwatering.com/#thomasqi.com?nav=next"
-          className="hover:text-foreground transition-colors">
-          →
-        </a>
-      </div>
+      {/* Footer - inline on mobile, fixed on desktop */}
+      <footer className="mt-10 sm:mt-0 flex items-center justify-between text-sm text-foreground/50 sm:contents">
+        {/* CS Webring */}
+        <div className="flex items-center gap-2 sm:fixed sm:bottom-4 sm:left-4">
+          <a
+            href="https://cs.uwatering.com/#thomasqi.com?nav=prev"
+            className="hover:text-foreground transition-colors">
+            ←
+          </a>
+          <a
+            href="https://cs.uwatering.com/#thomasqi.com"
+            target="_blank"
+            rel="noopener noreferrer">
+            <img
+              src="https://cs.uwatering.com/icon.black.svg"
+              alt="CS Webring"
+              className="w-5 h-auto opacity-50 hover:opacity-80 transition-opacity themed-invert"
+            />
+          </a>
+          <a
+            href="https://cs.uwatering.com/#thomasqi.com?nav=next"
+            className="hover:text-foreground transition-colors">
+            →
+          </a>
+        </div>
 
-      {/* Footer - Updated date (right) */}
-      <div className="fixed bottom-4 right-4 text-sm text-foreground/50">
-        Updated 2026/01/31
-      </div>
+        {/* Updated date */}
+        <div className="sm:fixed sm:bottom-4 sm:right-4">
+          Updated 2026/01/31
+        </div>
+      </footer>
     </div>
   );
 }
