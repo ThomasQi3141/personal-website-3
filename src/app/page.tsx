@@ -23,41 +23,56 @@ export default function Home() {
           </p>
 
           <p className="mt-4 text-base min-[420px]:text-lg sm:text-xl leading-relaxed text-foreground/90">
-            Currently, I&apos;m on an exchange semester at Nanyang Technological
-            University (NTU) in Singapore.
-          </p>
-
-          <p className="mt-4 text-base min-[420px]:text-lg sm:text-xl leading-relaxed text-foreground/90">
-            Previously, I&apos;ve worked on crypto trading platforms at{" "}
+            Currently, I&apos;m working on the Prime spot trading team at{" "}
             <a
-              href="https://www.bitgo.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="accent-link">
-              BitGo
-            </a>
-            . This summer, I&apos;ll be joining{" "}
-            <a
-              href="https://www.coinbase.com/"
+              href="https://www.coinbase.com/prime/trading"
               target="_blank"
               rel="noopener noreferrer"
               className="accent-link">
               Coinbase
             </a>{" "}
-            on the institutional product group in San Francisco.
+            in SF.
           </p>
 
           <p className="mt-4 text-base min-[420px]:text-lg sm:text-xl leading-relaxed text-foreground/90">
-            I&apos;ve also previously done research on the applications of LLM
-            tooling under{" "}
+            Previously, I&apos;ve worked on electronic trading platforms for
+            crypto at{" "}
+            <a
+              href="https://www.bitgo.com/products/trading/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="accent-link">
+              BitGo
+            </a>
+            .
+          </p>
+
+          <p className="mt-4 text-base min-[420px]:text-lg sm:text-xl leading-relaxed text-foreground/90">
+            I&apos;ve also previously done research on{" "}
+            <a
+              href="https://github.com/ThomasQi3141/repo-parsing"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="accent-link">
+              AI coding agent tooling
+            </a>{" "}
+            under{" "}
             <a
               href="https://cs.uwaterloo.ca/~m2nagapp/"
               target="_blank"
               rel="noopener noreferrer"
               className="accent-link">
               Dr. Mei Nagappan
-            </a>
-            .
+            </a>{" "}
+            under the{" "}
+            <a
+              href="https://www.swag.uwaterloo.ca/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="accent-link">
+              SWAG
+            </a>{" "}
+            group.
           </p>
 
           <p className="mt-4 text-base min-[420px]:text-lg sm:text-xl leading-relaxed text-foreground/90">
