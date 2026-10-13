@@ -60,7 +60,7 @@ export default function Home() {
               </a>
             </li>
             <li>
-              went on exchange at{" "}
+              gone on exchange at{" "}
               <a
                 href="https://www.ntu.edu.sg"
                 target="_blank"
