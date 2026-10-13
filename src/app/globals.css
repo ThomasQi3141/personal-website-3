@@ -1,10 +1,10 @@
 @import "tailwindcss";
 
 :root {
-  --background: rgb(245, 245, 247);
-  --foreground: #171717;
+  --background: #eeede9; /* warm off-white */
+  --foreground: #262624;
   --border: rgba(0, 0, 0, 0.08);
-  --hover-bg: #f2f2f2;
+  --hover-bg: #e5e4df;
   --accent: #2563eb; /* blue-600 */
   --accent-hover: #1d4ed8; /* blue-700 */
 }
@@ -23,10 +23,10 @@
 
 /* Explicit theme override via data attribute set by the toggle */
 html[data-theme="light"] {
-  --background: rgb(245, 245, 247);
-  --foreground: #171717;
+  --background: #eeede9; /* warm off-white */
+  --foreground: #262624;
   --border: rgba(0, 0, 0, 0.08);
-  --hover-bg: #f2f2f2;
+  --hover-bg: #e5e4df;
   --accent: #2563eb;
   --accent-hover: #1d4ed8;
 }
@@ -42,7 +42,7 @@ html[data-theme="dark"] {
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
+  --font-sans: var(--font-dm-sans);
   --font-mono: var(--font-geist-mono);
 }
 
@@ -89,4 +89,13 @@ html[data-theme="light"] .themed-invert {
 }
 html[data-theme="dark"] .themed-invert {
   filter: invert(1);
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }

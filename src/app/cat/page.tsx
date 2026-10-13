@@ -1,8 +1,7 @@
-import ThemeToggle from "@/components/ThemeToggle";
 import Link from "next/link";
-import Image from "next/image";
+import CatGallery, { type CatPhoto } from "./CatGallery";
 
-const catPhotos = [
+const catPhotos: CatPhoto[] = [
   { src: "/cat/2018-06-20.JPG", date: "June 20, 2018", caption: "Face to face" },
   { src: "/cat/2019-06-02.JPG", date: "June 2, 2019", caption: "Bro tried to escape" },
   { src: "/cat/2019-08-23.JPG", date: "August 23, 2019", caption: "Zzz..." },
@@ -13,69 +12,35 @@ const catPhotos = [
 
 export default function CatAlbum() {
   return (
-    <div className="min-h-screen px-5 sm:px-10 py-6">
-      {/* Theme toggle - inline on mobile, fixed on desktop */}
-      <div className="mb-6 sm:mb-0 sm:fixed sm:top-4 sm:left-4 sm:z-10">
-        <ThemeToggle />
-      </div>
-
-      <main className="max-w-4xl w-full mx-auto sm:pt-12">
-        {/* Back link */}
+    <div className="min-h-screen px-5 sm:px-10 py-6 sm:py-16">
+      <main className="max-w-3xl w-full mx-auto">
         <Link
           href="/"
-          className="inline-flex items-center gap-2 text-foreground/60 hover:text-foreground transition-colors mb-8">
+          className="inline-flex items-center gap-1.5 mb-6 text-sm text-foreground/70 hover:text-[var(--accent)] transition-colors duration-200">
           <svg
-            width="20"
-            height="20"
+            width="15"
+            height="15"
             viewBox="0 0 24 24"
             fill="none"
             stroke="currentColor"
             strokeWidth="2"
             strokeLinecap="round"
-            strokeLinejoin="round">
+            strokeLinejoin="round"
+            aria-hidden>
             <path d="M19 12H5M12 19l-7-7 7-7" />
           </svg>
-          <span>Back</span>
+          <span>back</span>
         </Link>
 
-        {/* Header */}
-        <div className="mb-10">
-          <h1 className="text-4xl sm:text-5xl font-bold tracking-tight mb-2">
-            Cat Album ₍^. .^₎⟆
-          </h1>
-          <p className="text-lg text-foreground/70">
-            My cat Winston, in chronological order
-          </p>
-        </div>
+        <h1 className="sr-only">Cat Album</h1>
+        <p className="mb-6 text-[13px] sm:text-[15px] leading-normal text-foreground/70">
+          this is winston
+        </p>
 
-        <hr className="border-t themed-border mb-8" />
+        <CatGallery photos={catPhotos} />
 
-        {/* Photo Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
-          {catPhotos.map((photo, index) => (
-            <div
-              key={index}
-              className="group relative aspect-square rounded-2xl overflow-hidden border themed-border bg-foreground/5">
-              <Image
-                src={photo.src}
-                alt={`Winston - ${photo.date}`}
-                fill
-                className="object-cover"
-                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-              />
-
-              {/* Hover overlay with caption and date */}
-              <div className="absolute inset-x-0 bottom-0 p-4 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
-                <p className="text-white text-sm font-medium">{photo.caption}</p>
-                <p className="text-white/70 text-xs mt-0.5">{photo.date}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-
-        {/* Footer note */}
-        <p className="text-center text-foreground/50 mt-10 mb-6 text-sm">
-          More photos coming soon...
+        <p className="mt-8 text-xs text-foreground/40">
+          more photos coming soon
         </p>
       </main>
     </div>

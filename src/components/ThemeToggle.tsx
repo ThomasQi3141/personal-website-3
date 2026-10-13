@@ -22,10 +22,7 @@ export default function ThemeToggle() {
   }, []);
 
   const toggle = () => {
-    const next: Theme =
-      document.documentElement.getAttribute("data-theme") === "dark"
-        ? "light"
-        : "dark";
+    const next: Theme = isDark ? "light" : "dark";
     document.documentElement.setAttribute("data-theme", next);
     try {
       localStorage.setItem("theme", next);
@@ -41,69 +38,55 @@ export default function ThemeToggle() {
         window.matchMedia("(prefers-color-scheme: dark)").matches)
     : null;
 
+  const iconClass =
+    "absolute inset-0 transition-all duration-500 ease-[cubic-bezier(0.34,1.56,0.64,1)]";
+  const shown = "opacity-100 rotate-0 scale-100";
+  const hiddenCw = "opacity-0 rotate-90 scale-50";
+  const hiddenCcw = "opacity-0 -rotate-90 scale-50";
+
   return (
     <button
       onClick={toggle}
       aria-label="Toggle theme"
       title="Toggle theme"
-      className="h-10 w-10 rounded-full border themed-border transition-colors flex items-center justify-center themed-hover cursor-default hover:cursor-pointer"
+      className="relative h-[18px] w-[18px] text-foreground/70 hover:text-[var(--accent)] transition-colors duration-200 cursor-pointer active:scale-90"
       style={{ lineHeight: 0 }}>
-      {isDark === null ? (
-        // Neutral placeholder icon to avoid hydration mismatch
-        <svg
-          width="20"
-          height="20"
-          viewBox="0 0 24 24"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          className="text-foreground">
-          <circle
-            cx="12"
-            cy="12"
-            r="6"
-            stroke="currentColor"
-            strokeWidth="1.5"
-          />
-        </svg>
-      ) : isDark ? (
-        // Sun icon
-        <svg
-          width="20"
-          height="20"
-          viewBox="0 0 24 24"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          className="text-foreground">
-          <path
-            d="M12 18a6 6 0 1 0 0-12 6 6 0 0 0 0 12Z"
-            stroke="currentColor"
-            strokeWidth="1.5"
-          />
-          <path
-            d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"
-            stroke="currentColor"
-            strokeWidth="1.5"
-            strokeLinecap="round"
-          />
-        </svg>
-      ) : (
-        // Moon icon
-        <svg
-          width="20"
-          height="20"
-          viewBox="0 0 24 24"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          className="text-foreground">
-          <path
-            d="M21 12.79A9 9 0 1 1 11.21 3c0 .34.02.68.06 1.01a7 7 0 0 0 8.72 8.72c.33.04.67.06 1.01.06Z"
-            stroke="currentColor"
-            strokeWidth="1.5"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          />
-        </svg>
-      )}
+      {/* Sun (Feather) - shown in dark mode */}
+      <svg
+        width="18"
+        height="18"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        aria-hidden
+        className={`${iconClass} ${isDark === true ? shown : hiddenCcw}`}>
+        <circle cx="12" cy="12" r="5" />
+        <line x1="12" y1="1" x2="12" y2="3" />
+        <line x1="12" y1="21" x2="12" y2="23" />
+        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+        <line x1="1" y1="12" x2="3" y2="12" />
+        <line x1="21" y1="12" x2="23" y2="12" />
+        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+      </svg>
+      {/* Moon (Feather) - shown in light mode */}
+      <svg
+        width="18"
+        height="18"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        aria-hidden
+        className={`${iconClass} ${isDark === false ? shown : hiddenCw}`}>
+        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+      </svg>
     </button>
   );
 }
