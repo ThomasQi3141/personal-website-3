@@ -8,6 +8,8 @@ const catPhotos: CatPhoto[] = [
   { src: "/cat/2023-08-03.JPG", date: "August 3, 2023", caption: "Stairs" },
   { src: "/cat/2023-08-24.jpg", date: "August 24, 2023", caption: "His fav box" },
   { src: "/cat/2025-12-06.JPG", date: "December 6, 2025", caption: "Just woke up" },
+  { src: "/cat/2026-10-07.JPG", date: "October 7, 2026", caption: "Beauty sleep" },
+  { src: "/cat/2026-10-12.JPG", date: "October 12, 2026", caption: "Laying down" },
 ];
 
 export default function CatAlbum() {
